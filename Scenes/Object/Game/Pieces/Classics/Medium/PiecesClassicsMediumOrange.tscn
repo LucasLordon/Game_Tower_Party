@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dy12ck7ie3yof" path="res://Assets/Pieces/Classics/Medium/PiecesClassicsMediumOrange.png" id="1_lnigk"]
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="PieceClassicsMediumOrange" type="RigidBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_lnigk")
@@ -10,4 +10,7 @@ texture = ExtResource("1_lnigk")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(124, -248, 372, -248, 372, 248, -372, 248, -372, 0, 124, 0)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(124, -248, 372, -248, 372, 248, -372, 248, -372, 0, 124, 0)
