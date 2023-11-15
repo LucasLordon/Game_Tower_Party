@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dcn3tysi7efr"]
+[gd_scene load_steps=13 format=3 uid="uid://dcn3tysi7efr"]
 
 [ext_resource type="Texture2D" uid="uid://ca7m1jdalqocf" path="res://Assets/background.jpg" id="1_w03bg"]
 [ext_resource type="Theme" uid="uid://r608y2dg8ycw" path="res://Themes/DefaultTheme.tres" id="2_37enm"]
@@ -6,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bplrqw0gr60ar" path="res://Assets/GUI.png" id="3_4w6lp"]
 [ext_resource type="Script" path="res://Scenes/Menu/Scripts/ButtonPlay.gd" id="4_d2dvm"]
 [ext_resource type="Script" path="res://Scenes/Menu/Scripts/ButtonQuit.gd" id="5_iouyk"]
-[ext_resource type="Script" path="res://Scenes/Menu/Scripts/ButtonBack.gd" id="6_5ecjk"]
-[ext_resource type="Script" path="res://Scenes/Menu/Scripts/Button1P.gd" id="7_m2rgn"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i25im"]
 texture = ExtResource("3_4w6lp")
@@ -113,7 +111,6 @@ offset_top = -360.0
 offset_right = 150.0
 offset_bottom = -280.0
 text = "Back"
-script = ExtResource("6_5ecjk")
 
 [node name="Button1P" type="Button" parent="ButtonPlay/ButtonBack"]
 layout_mode = 0
@@ -122,32 +119,30 @@ offset_top = -160.0
 offset_right = -120.0
 offset_bottom = -80.0
 text = "1Player"
-script = ExtResource("7_m2rgn")
 
-[node name="ButtonBack" type="Button" parent="ButtonPlay/ButtonBack/Button1P"]
+[node name="ButtonBack1P" type="Button" parent="ButtonPlay/ButtonBack/Button1P"]
 layout_mode = 0
 offset_left = -800.0
 offset_top = 160.0
 offset_right = -650.0
 offset_bottom = 240.0
 text = "Back"
-script = ExtResource("6_5ecjk")
 
-[node name="Button1P" type="Button" parent="ButtonPlay/ButtonBack/Button1P/ButtonBack"]
+[node name="ButtonClassic" type="Button" parent="ButtonPlay/ButtonBack/Button1P/ButtonBack1P"]
 layout_mode = 0
 offset_left = -270.0
 offset_top = -160.0
 offset_right = -120.0
 offset_bottom = -80.0
-text = "1Player"
+text = "Classic"
 
-[node name="ButtonMultiplayer" type="Button" parent="ButtonPlay/ButtonBack/Button1P/ButtonBack"]
+[node name="ButtonVariants" type="Button" parent="ButtonPlay/ButtonBack/Button1P/ButtonBack1P"]
 layout_mode = 0
 offset_left = 260.0
 offset_top = -160.0
 offset_right = 410.0
 offset_bottom = -80.0
-text = "MultiPlayer"
+text = "Variants"
 
 [node name="ButtonMultiplayer" type="Button" parent="ButtonPlay/ButtonBack"]
 layout_mode = 0
@@ -169,6 +164,8 @@ language = "en"
 
 [connection signal="pressed" from="ButtonPlay" to="ButtonPlay" method="_on_pressed"]
 [connection signal="pressed" from="ButtonPlay/ButtonQuit" to="ButtonPlay/ButtonQuit" method="_on_pressed"]
+[connection signal="pressed" from="ButtonPlay/ButtonBack" to="ButtonPlay" method="_on_button_back_pressed"]
 [connection signal="pressed" from="ButtonPlay/ButtonBack" to="ButtonPlay/ButtonBack" method="_on_pressed"]
+[connection signal="pressed" from="ButtonPlay/ButtonBack/Button1P" to="ButtonPlay" method="_on_button_1p_pressed"]
 [connection signal="pressed" from="ButtonPlay/ButtonBack/Button1P" to="ButtonPlay/ButtonBack/Button1P" method="_on_pressed"]
-[connection signal="pressed" from="ButtonPlay/ButtonBack/Button1P/ButtonBack" to="ButtonPlay/ButtonBack/Button1P/ButtonBack" method="_on_pressed"]
+[connection signal="pressed" from="ButtonPlay/ButtonBack/Button1P/ButtonBack1P" to="ButtonPlay" method="_on_button_back_1p_pressed"]
