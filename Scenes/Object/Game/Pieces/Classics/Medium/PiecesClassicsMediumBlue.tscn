@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tir2w"]
 size = Vector2(992, 248)
 
-[node name="PiecesClassicsMediumPiecesBlue" type="RigidBody2D"]
+[node name="PiecesClassicsMediumBlue" type="RigidBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_tmao5")
@@ -13,11 +13,9 @@ texture = ExtResource("1_tmao5")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 shape = SubResource("RectangleShape2D_tir2w")
 debug_color = Color(1, 0, 0, 0.752941)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("RectangleShape2D_tir2w")
 debug_color = Color(1, 0, 0, 0.419608)
