@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://12m6b113oi1y"]
+
+[ext_resource type="Texture2D" uid="uid://4sp5cas6d3cx" path="res://Assets/Pieces/Classics/Medium/PiecesClassicsMediumGreen.png" id="1_08j6g"]
+
+[node name="PiecesClassicsMediumPiecesGreen" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_08j6g")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-124, -248, -124, 0, -372, 0, -372, 248, 124, 248, 124, 0, 372, 0, 372, -248)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-124, -248, -124, 0, -372, 0, -372, 248, 124, 248, 124, 0, 372, 0, 372, -248)
