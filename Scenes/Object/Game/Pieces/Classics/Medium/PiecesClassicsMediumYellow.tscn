@@ -7,6 +7,7 @@ size = Vector2(496, 496)
 
 [node name="PiecesClassicsMediumYellow" type="RigidBody2D"]
 
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_dog7d")
 
@@ -17,3 +18,4 @@ shape = SubResource("RectangleShape2D_2ykxb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_2ykxb")
+
