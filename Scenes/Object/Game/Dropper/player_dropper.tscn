@@ -1,7 +1,11 @@
-[gd_scene format=3 uid="uid://b6cuk4wgksgjx"]
+[gd_scene load_steps=2 format=3 uid="uid://b6cuk4wgksgjx"]
+
+[ext_resource type="Script" path="res://Scenes/Object/Game/Dropper/player_dropper.gd" id="1_5btrb"]
 
 [node name="PlayerDropper" type="Node2D"]
-position = Vector2(162, 58)
+script = ExtResource("1_5btrb")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(167, 70)
+[node name="SpawnPiecesTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="timeout" from="SpawnPiecesTimer" to="." method="_on_timer_timeout"]
