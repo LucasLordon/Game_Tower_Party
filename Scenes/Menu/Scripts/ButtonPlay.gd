@@ -1,5 +1,7 @@
 extends Button
 
+@export var test_level_scene: PackedScene
+
 var isGoingDown : bool = false
 var isGoingUp : bool = false
 var isGoingRight : bool = false
@@ -39,3 +41,9 @@ func _on_button_1p_pressed():
 
 func _on_button_back_1p_pressed():
 	isGoingLeft = true
+
+
+func _on_button_classic_pressed():
+	get_tree().change_scene_to_packed(test_level_scene)
+
+
