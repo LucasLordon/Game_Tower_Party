@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b6cuk4wgksgjx"]
+
+[node name="PlayerDropper" type="Node2D"]
+position = Vector2(162, 58)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(167, 70)

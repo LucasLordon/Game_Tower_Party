@@ -3,12 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://b26sq7l4hu30b" path="res://Assets/Pieces/Classics/Medium/PiecesClassicsMediumYellow.png" id="1_dog7d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ykxb"]
-size = Vector2(496, 496)
+size = Vector2(100, 100)
 
 [node name="PiecesClassicsMediumYellow" type="RigidBody2D"]
 
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_dog7d")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -18,4 +18,3 @@ shape = SubResource("RectangleShape2D_2ykxb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_2ykxb")
-
