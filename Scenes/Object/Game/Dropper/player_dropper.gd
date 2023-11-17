@@ -9,7 +9,7 @@ var pieces = ["res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClassicsMed
 ,"res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClassicsMediumRed.tscn"
 ,"res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClassicsMediumYellow.tscn"]
 
-signal piece_detected(chosePiece)
+signal piece_detected(chosePiece: String)
 
 func _process(_delta):
 	if(CanSpawnRandomPieces):
