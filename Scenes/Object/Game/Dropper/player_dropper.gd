@@ -9,11 +9,17 @@ var pieces = ["res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClassicsMed
 ,"res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClassicsMediumRed.tscn"
 ,"res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClassicsMediumYellow.tscn"]
 
-signal piece_detected(chosePiece: String)
+var pieces_paths : Array = []
+
+func _ready():
+	for path in pieces_paths:
+		var packed_scene = load(path)
+		pieces.append(packed_scene)
+
+signal piece_detected(chosePiece)
 
 func _process(_delta):
 	if(CanSpawnRandomPieces):
-		print("piece")
 		spawn_random_piece()
 		$SpawnPiecesTimer.start()
 		CanSpawnRandomPieces = false
