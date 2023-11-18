@@ -21,7 +21,7 @@ func _process(delta):
 	
 	if isGoingLeft:
 		position.x -= 600 * delta
-		if position.y < 500: #A changer la value
+		if position.x < 525: #A changer la value
 			isGoingLeft = false
 		
 	if isGoingRight:

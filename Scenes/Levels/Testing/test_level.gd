@@ -10,18 +10,7 @@ var pieces_paths = [
 	preload("res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClassicsMediumYellow.tscn")
 ]
 
-func _on_player_dropper_piece_detected():
-	print("test2")
-	var random_index = randi() % pieces_paths.size()
-	var chosen_piece_scene = pieces_paths[random_index]
-	var piece_instance = chosen_piece_scene.instance()
-
-	# Check if the instance was successfully created
-	if piece_instance != null:
-		# Set the position of the instance
-		piece_instance.position = $PlayerDropper.global_position
-
-		# Add the instance as a child to $Pieces
-		$Pieces.add_child(piece_instance)
-	else:
-		print("Error instantiating piece.")
+func _on_player_dropper_piece_detected(pieceNumber):
+	var piece_instance = pieces_paths[pieceNumber].instance() as RigidBody2D
+	piece_instance.position = $PlayerDropper.global_position
+	$Pieces.add_child(piece_instance)
