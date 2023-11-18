@@ -1,5 +1,16 @@
 extends Node2D
 
+
+
+var speed = 500
+var vel = Vector2()
+
+func _ready():
+	set_process(true)
+
+
+
+
 var CanSpawnRandomPieces: bool = true
 var pieces_paths = ["res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClassicsMediumBlue.tscn",
 "res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClassicsMediumDarkBlue.tscn",
@@ -10,7 +21,28 @@ var pieces_paths = ["res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClass
 "res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClassicsMediumYellow.tscn"]
 signal piece_detected(pieceNumber)
 
-func _process(_delta):
+func _process(delta):
+	
+	var direction = Vector2()
+	if Input.is_action_pressed("ui_right"):
+		direction.x += 1
+	if Input.is_action_pressed("ui_left"):
+		direction.x -= 1
+	if Input.is_action_pressed("ui_down"):
+		direction.y += 1
+	if Input.is_action_pressed("ui_up"):
+		direction.y -= 1
+
+	var vel = direction.normalized() * speed
+	self.translate(vel * delta)
+
+	
+	
+	
+	
+	
+	
+	
 	if CanSpawnRandomPieces:
 		spawn_random_piece()
 		$SpawnPiecesTimer.start()
