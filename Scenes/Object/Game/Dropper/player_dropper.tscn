@@ -7,9 +7,13 @@
 script = ExtResource("1_5btrb")
 
 [node name="SpawnPiecesTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 5.0
+
+[node name="CanMove" type="Timer" parent="."]
+wait_time = 0.1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_4nf31")
 
 [connection signal="timeout" from="SpawnPiecesTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="CanMove" to="." method="_on_can_move_timeout"]
