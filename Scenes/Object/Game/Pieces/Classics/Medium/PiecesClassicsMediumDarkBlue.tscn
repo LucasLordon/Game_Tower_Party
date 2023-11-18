@@ -5,15 +5,18 @@
 [node name="PiecesClassicsMediumDarkBlue" type="RigidBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(74.04, 49.36)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_ba2r2")
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(74.04, 49.36)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 scale = Vector2(0.2, 0.2)
 polygon = PackedVector2Array(-123, -2, -122, -2, -122, -1, 372, -1, 372, 248, -372, 248, -372, -248, -123, -248)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(74.04, 49.36)
 scale = Vector2(0.2, 0.2)
 polygon = PackedVector2Array(-123, -2, -122, -2, -122, -1, 372, -1, 372, 248, -372, 248, -372, -248, -123, -248)
