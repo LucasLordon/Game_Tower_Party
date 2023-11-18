@@ -1,18 +1,26 @@
 extends Node2D
 
-func _on_player_dropper_piece_detected(chosePiece):
-	print(chosePiece)
-#	if chosePiece:
-	print(chosePiece)
-	var piece_instance = preload(chosePiece).instantiate() as RigidBody2D
-	piece_instance.position = $PlayerDropper.global_position
-	$Pieces.add_child(piece_instance)
-#		if piece_instance and piece_instance is RigidBody2D:
-#			print(chosePiece)
-#			var piece = piece_instance as RigidBody2D
-#			piece.position = $PlayerDropper.global_position
-#			$Pieces.add_child(piece)
-#		else:
-#			print("Erreur : La scène chargée n'est pas une instance de RigidBody2D.")
-#	else:
-#		print("Erreur : Impossible de charger la scène.")
+var pieces_paths = [
+	preload("res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClassicsMediumBlue.tscn"),
+	preload("res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClassicsMediumDarkBlue.tscn"),
+	preload("res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClassicsMediumGreen.tscn"),
+	preload("res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClassicsMediumOrange.tscn"),
+	preload("res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClassicsMediumPurple.tscn"),
+	preload("res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClassicsMediumRed.tscn"),
+	preload("res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClassicsMediumYellow.tscn")
+]
+
+func _on_player_dropper_piece_detected():
+	var random_index = randi() % pieces_paths.size()
+	var chosen_piece_scene = pieces_paths[random_index]
+	var piece_instance = chosen_piece_scene.instance()
+
+	# Check if the instance was successfully created
+	if piece_instance != null:
+		# Set the position of the instance
+		piece_instance.position = $PlayerDropper.global_position
+
+		# Add the instance as a child to $Pieces
+		$Pieces.add_child(piece_instance)
+	else:
+		print("Error instantiating piece.")
