@@ -11,7 +11,7 @@ var pieces_paths = [
 ]
 
 func _on_player_dropper_piece_detected(pieceNumber):
-	var piece_scene = pieces_paths[0]
+	var piece_scene = pieces_paths[pieceNumber]
 	if piece_scene:
 		var piece_instance = piece_scene.instantiate()
 		if piece_instance is RigidBody2D:
