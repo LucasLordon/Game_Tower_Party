@@ -1,0 +1,174 @@
+[gd_scene load_steps=14 format=3 uid="uid://dcn3tysi7efr"]
+
+[ext_resource type="Texture2D" uid="uid://ca7m1jdalqocf" path="res://Assets/background.jpg" id="1_w03bg"]
+[ext_resource type="Theme" uid="uid://r608y2dg8ycw" path="res://Themes/DefaultTheme.tres" id="2_37enm"]
+[ext_resource type="FontFile" uid="uid://c375qswgprco3" path="res://Assets/Pixelme.ttf" id="2_k1h6n"]
+[ext_resource type="Texture2D" uid="uid://bplrqw0gr60ar" path="res://Assets/GUI.png" id="3_4w6lp"]
+[ext_resource type="Script" path="res://Scenes/Menu/Scripts/ButtonPlay.gd" id="4_d2dvm"]
+[ext_resource type="PackedScene" uid="uid://rtn72uaw6mal" path="res://Scenes/Levels/Testing/test_level.tscn" id="5_31tk6"]
+[ext_resource type="Script" path="res://Scenes/Menu/Scripts/ButtonQuit.gd" id="5_iouyk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i25im"]
+texture = ExtResource("3_4w6lp")
+region_rect = Rect2(113, 113, 30, 14)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rj5m3"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fgt25"]
+texture = ExtResource("3_4w6lp")
+region_rect = Rect2(113, 81, 30, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bx2v1"]
+texture = ExtResource("3_4w6lp")
+region_rect = Rect2(113, 81, 30, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4iyqn"]
+texture = ExtResource("3_4w6lp")
+region_rect = Rect2(113, 98, 30, 13)
+
+[sub_resource type="Theme" id="Theme_nd3cd"]
+default_font = ExtResource("2_k1h6n")
+default_font_size = 0
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 2
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("2_k1h6n")
+Button/styles/disabled = SubResource("StyleBoxTexture_i25im")
+Button/styles/focus = SubResource("StyleBoxFlat_rj5m3")
+Button/styles/hover = SubResource("StyleBoxTexture_fgt25")
+Button/styles/normal = SubResource("StyleBoxTexture_bx2v1")
+Button/styles/pressed = SubResource("StyleBoxTexture_4iyqn")
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(1.69412, 1.8)
+texture = ExtResource("1_w03bg")
+
+[node name="ButtonPlay" type="Button" parent="."]
+light_mask = 0
+offset_left = 500.0
+offset_top = 251.0
+offset_right = 650.0
+offset_bottom = 331.0
+theme = SubResource("Theme_nd3cd")
+text = "Play"
+script = ExtResource("4_d2dvm")
+test_level_scene = ExtResource("5_31tk6")
+
+[node name="ButtonHelp" type="Button" parent="ButtonPlay"]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 150.0
+offset_bottom = 180.0
+theme = SubResource("Theme_nd3cd")
+text = "Help"
+
+[node name="ButtonQuit" type="Button" parent="ButtonPlay"]
+layout_mode = 0
+offset_top = 200.0
+offset_right = 150.0
+offset_bottom = 280.0
+theme = SubResource("Theme_nd3cd")
+text = "Quit"
+script = ExtResource("5_iouyk")
+
+[node name="ButtonBack" type="Button" parent="ButtonPlay"]
+layout_mode = 0
+offset_top = -360.0
+offset_right = 150.0
+offset_bottom = -280.0
+text = "Back"
+
+[node name="Button1P" type="Button" parent="ButtonPlay/ButtonBack"]
+layout_mode = 0
+offset_left = -270.0
+offset_top = -160.0
+offset_right = -120.0
+offset_bottom = -80.0
+text = "1Player"
+
+[node name="ButtonBack1P" type="Button" parent="ButtonPlay/ButtonBack/Button1P"]
+layout_mode = 0
+offset_left = -800.0
+offset_top = 160.0
+offset_right = -650.0
+offset_bottom = 240.0
+text = "Back"
+
+[node name="ButtonClassic" type="Button" parent="ButtonPlay/ButtonBack/Button1P/ButtonBack1P"]
+layout_mode = 0
+offset_left = -270.0
+offset_top = -160.0
+offset_right = -120.0
+offset_bottom = -80.0
+text = "Classic"
+
+[node name="ButtonVariants" type="Button" parent="ButtonPlay/ButtonBack/Button1P/ButtonBack1P"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -160.0
+offset_right = 410.0
+offset_bottom = -80.0
+text = "Variants"
+
+[node name="ButtonMultiplayer" type="Button" parent="ButtonPlay/ButtonBack"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -160.0
+offset_right = 410.0
+offset_bottom = -80.0
+text = "MultiPlayer"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 350.0
+offset_top = 100.0
+offset_right = 795.0
+offset_bottom = 163.0
+theme = ExtResource("2_37enm")
+theme_override_font_sizes/font_size = 60
+text = "Tricky Towers"
+language = "en"
+
+[connection signal="pressed" from="ButtonPlay" to="ButtonPlay" method="_on_pressed"]
+[connection signal="pressed" from="ButtonPlay/ButtonQuit" to="ButtonPlay/ButtonQuit" method="_on_pressed"]
+[connection signal="pressed" from="ButtonPlay/ButtonBack" to="ButtonPlay" method="_on_button_back_pressed"]
+[connection signal="pressed" from="ButtonPlay/ButtonBack" to="ButtonPlay/ButtonBack" method="_on_pressed"]
+[connection signal="pressed" from="ButtonPlay/ButtonBack/Button1P" to="ButtonPlay" method="_on_button_1p_pressed"]
+[connection signal="pressed" from="ButtonPlay/ButtonBack/Button1P" to="ButtonPlay/ButtonBack/Button1P" method="_on_pressed"]
+[connection signal="pressed" from="ButtonPlay/ButtonBack/Button1P/ButtonBack1P" to="ButtonPlay" method="_on_button_back_1p_pressed"]
+[connection signal="pressed" from="ButtonPlay/ButtonBack/Button1P/ButtonBack1P/ButtonClassic" to="ButtonPlay" method="_on_button_classic_pressed"]
