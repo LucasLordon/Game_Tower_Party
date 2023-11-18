@@ -11,6 +11,7 @@ var pieces_paths = [
 ]
 
 func _on_player_dropper_piece_detected():
+	print("test")
 	var random_index = randi() % pieces_paths.size()
 	var chosen_piece_scene = pieces_paths[random_index]
 	var piece_instance = chosen_piece_scene.instance()
