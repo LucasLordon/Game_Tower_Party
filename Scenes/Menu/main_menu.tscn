@@ -169,6 +169,5 @@ language = "en"
 [connection signal="pressed" from="ButtonPlay/ButtonBack" to="ButtonPlay" method="_on_button_back_pressed"]
 [connection signal="pressed" from="ButtonPlay/ButtonBack" to="ButtonPlay/ButtonBack" method="_on_pressed"]
 [connection signal="pressed" from="ButtonPlay/ButtonBack/Button1P" to="ButtonPlay" method="_on_button_1p_pressed"]
-[connection signal="pressed" from="ButtonPlay/ButtonBack/Button1P" to="ButtonPlay/ButtonBack/Button1P" method="_on_pressed"]
 [connection signal="pressed" from="ButtonPlay/ButtonBack/Button1P/ButtonBack1P" to="ButtonPlay" method="_on_button_back_1p_pressed"]
 [connection signal="pressed" from="ButtonPlay/ButtonBack/Button1P/ButtonBack1P/ButtonClassic" to="ButtonPlay" method="_on_button_classic_pressed"]

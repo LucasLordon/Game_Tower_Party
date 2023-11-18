@@ -8,18 +8,15 @@ var pieces_paths = ["res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClass
 "res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClassicsMediumPurple.tscn",
 "res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClassicsMediumRed.tscn",
 "res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClassicsMediumYellow.tscn"]
-signal piece_detected()
+signal piece_detected(pieceNumber)
 
 func _process(_delta):
 	if CanSpawnRandomPieces:
 		spawn_random_piece()
 		$SpawnPiecesTimer.start()
 		CanSpawnRandomPieces = false
-
 func _on_timer_timeout():
 	CanSpawnRandomPieces = true
-
 func spawn_random_piece():
-	var random_index = randi() % pieces_paths.size()
-	var chosePiece = pieces_paths[random_index]
-	piece_detected.emit()
+	var pieceNumber = randi() % pieces_paths.size()
+	piece_detected.emit(pieceNumber)
