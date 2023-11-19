@@ -1,6 +1,11 @@
-[gd_scene format=3 uid="uid://dn7y5xlor3jiy"]
+[gd_scene load_steps=3 format=3 uid="uid://dn7y5xlor3jiy"]
+
+[ext_resource type="Script" path="res://Scenes/User Interface/ui.gd" id="1_nx2iu"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_hpu35"]
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_nx2iu")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -9,3 +14,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.305882, 0.627451, 0.603922, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("ImageTexture_hpu35")
