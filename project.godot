@@ -19,10 +19,6 @@ config/icon="res://icon.svg"
 
 Global="*res://Scripts/global.gd"
 
-[display]
-
-window/size/resizable=false
-
 [input]
 
 left={
