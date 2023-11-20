@@ -1,10 +1,8 @@
 extends Node2D
 var speed = 5937.5
 var vel = Vector2()
-
-func _ready():
-	set_process(true)
-
+var _nextPieceNumber
+var _pieceNumber
 var CanMoveDropper: bool = true
 var CanSpawnRandomPieces: bool = true
 var pieces_paths = ["res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClassicsMediumBlue.tscn",
@@ -14,7 +12,12 @@ var pieces_paths = ["res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClass
 "res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClassicsMediumPurple.tscn",
 "res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClassicsMediumRed.tscn",
 "res://Scenes/Object/Game/Pieces/Classics/Medium/PiecesClassicsMediumYellow.tscn"]
-signal piece_detected(pieceNumber)
+signal piece_detected(pieceNumber,nextPieceNumber)
+
+func _ready():
+	set_process(true)
+	_nextPieceNumber = randi() % pieces_paths.size()
+
 func _process(delta):
 	var direction = Vector2()
 	if Input.is_action_pressed("right")and CanMoveDropper:
@@ -34,8 +37,9 @@ func _process(delta):
 func _on_timer_timeout():
 	CanSpawnRandomPieces = true
 func spawn_random_piece():
-	var pieceNumber = randi() % pieces_paths.size()
-	piece_detected.emit(pieceNumber)
+	_pieceNumber = _nextPieceNumber
+	_nextPieceNumber = randi() % pieces_paths.size()
+	piece_detected.emit(_pieceNumber,_nextPieceNumber)
 
 func _on_can_move_timeout():
 	CanMoveDropper = true
