@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dcn3tysi7efr"]
+[gd_scene load_steps=15 format=3 uid="uid://dcn3tysi7efr"]
 
 [ext_resource type="Texture2D" uid="uid://ca7m1jdalqocf" path="res://Assets/background.jpg" id="1_w03bg"]
 [ext_resource type="Theme" uid="uid://r608y2dg8ycw" path="res://Themes/DefaultTheme.tres" id="2_37enm"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scenes/Menu/Scripts/ButtonPlay.gd" id="4_d2dvm"]
 [ext_resource type="PackedScene" uid="uid://rtn72uaw6mal" path="res://Scenes/Levels/Testing/test_level.tscn" id="5_31tk6"]
 [ext_resource type="Script" path="res://Scenes/Menu/Scripts/ButtonQuit.gd" id="5_iouyk"]
+[ext_resource type="Script" path="res://Scenes/Menu/isWindowFullscreen.gd" id="8_8271h"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i25im"]
 texture = ExtResource("3_4w6lp")
@@ -82,9 +83,9 @@ texture = ExtResource("1_w03bg")
 [node name="ButtonPlay" type="Button" parent="."]
 light_mask = 0
 offset_left = 500.0
-offset_top = 251.0
+offset_top = 250.0
 offset_right = 650.0
-offset_bottom = 331.0
+offset_bottom = 330.0
 theme = SubResource("Theme_nd3cd")
 text = "Play"
 script = ExtResource("4_d2dvm")
@@ -164,10 +165,19 @@ theme_override_font_sizes/font_size = 60
 text = "Tricky Towers"
 language = "en"
 
+[node name="isWindowFullscreen" type="CheckButton" parent="."]
+offset_left = 1081.0
+offset_top = 17.0
+offset_right = 1125.0
+offset_bottom = 41.0
+script = ExtResource("8_8271h")
+
 [connection signal="pressed" from="ButtonPlay" to="ButtonPlay" method="_on_pressed"]
+[connection signal="ready" from="ButtonPlay" to="ButtonPlay" method="_on_ready"]
 [connection signal="pressed" from="ButtonPlay/ButtonQuit" to="ButtonPlay/ButtonQuit" method="_on_pressed"]
 [connection signal="pressed" from="ButtonPlay/ButtonBack" to="ButtonPlay" method="_on_button_back_pressed"]
 [connection signal="pressed" from="ButtonPlay/ButtonBack" to="ButtonPlay/ButtonBack" method="_on_pressed"]
 [connection signal="pressed" from="ButtonPlay/ButtonBack/Button1P" to="ButtonPlay" method="_on_button_1p_pressed"]
 [connection signal="pressed" from="ButtonPlay/ButtonBack/Button1P/ButtonBack1P" to="ButtonPlay" method="_on_button_back_1p_pressed"]
 [connection signal="pressed" from="ButtonPlay/ButtonBack/Button1P/ButtonBack1P/ButtonClassic" to="ButtonPlay" method="_on_button_classic_pressed"]
+[connection signal="toggled" from="isWindowFullscreen" to="isWindowFullscreen" method="_on_toggled"]
