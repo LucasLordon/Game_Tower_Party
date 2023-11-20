@@ -155,6 +155,29 @@ offset_right = 410.0
 offset_bottom = -80.0
 text = "MultiPlayer"
 
+[node name="ButtonBackMP" type="Button" parent="ButtonPlay/ButtonBack/ButtonMultiplayer"]
+offset_left = 800.0
+offset_top = 160.0
+offset_right = 950.0
+offset_bottom = 240.0
+text = "Back"
+
+[node name="ButtonJoinLobby" type="Button" parent="ButtonPlay/ButtonBack/ButtonMultiplayer/ButtonBackMP"]
+layout_mode = 0
+offset_left = -270.0
+offset_top = -160.0
+offset_right = -120.0
+offset_bottom = -80.0
+text = "Join Lobby"
+
+[node name="ButtonCreateLobby" type="Button" parent="ButtonPlay/ButtonBack/ButtonMultiplayer/ButtonBackMP"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -160.0
+offset_right = 410.0
+offset_bottom = -80.0
+text = "Create Lobby"
+
 [node name="Label" type="Label" parent="."]
 offset_left = 350.0
 offset_top = 100.0
@@ -180,4 +203,6 @@ script = ExtResource("8_8271h")
 [connection signal="pressed" from="ButtonPlay/ButtonBack/Button1P" to="ButtonPlay" method="_on_button_1p_pressed"]
 [connection signal="pressed" from="ButtonPlay/ButtonBack/Button1P/ButtonBack1P" to="ButtonPlay" method="_on_button_back_1p_pressed"]
 [connection signal="pressed" from="ButtonPlay/ButtonBack/Button1P/ButtonBack1P/ButtonClassic" to="ButtonPlay" method="_on_button_classic_pressed"]
+[connection signal="pressed" from="ButtonPlay/ButtonBack/ButtonMultiplayer" to="ButtonPlay" method="_on_button_multiplayer_pressed"]
+[connection signal="pressed" from="ButtonPlay/ButtonBack/ButtonMultiplayer/ButtonBackMP" to="ButtonPlay" method="_on_button_back_mp_pressed"]
 [connection signal="toggled" from="isWindowFullscreen" to="isWindowFullscreen" method="_on_toggled"]
