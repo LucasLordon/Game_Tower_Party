@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://rtn72uaw6mal"]
+[gd_scene load_steps=5 format=3 uid="uid://rtn72uaw6mal"]
 
 [ext_resource type="PackedScene" uid="uid://cj3yq3msbg0wi" path="res://Scenes/Object/Game/Structurs/Bases/base.tscn" id="1_aga75"]
 [ext_resource type="Script" path="res://Scenes/Levels/Testing/test_level.gd" id="1_scabg"]
+[ext_resource type="Texture2D" uid="uid://b7xeqwptuy4k" path="res://Assets/Pieces/Classics/Medium/PiecesClassicsMediumBlue.png" id="4_shuit"]
 [ext_resource type="PackedScene" uid="uid://b6cuk4wgksgjx" path="res://Scenes/Object/Game/Dropper/player_dropper.tscn" id="9_71j7f"]
 
 [node name="Test level" type="Node2D"]
@@ -10,9 +11,20 @@ script = ExtResource("1_scabg")
 [node name="Base" parent="." instance=ExtResource("1_aga75")]
 position = Vector2(627, 723)
 
+[node name="DropingPiece" type="Node2D" parent="."]
+
 [node name="Pieces" type="Node2D" parent="."]
 
 [node name="PlayerDropper" parent="." instance=ExtResource("9_71j7f")]
-position = Vector2(545, 106)
+position = Vector2(585, -222)
+
+[node name="NextPieces" type="Sprite2D" parent="."]
+position = Vector2(1479, -304)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_shuit")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(610, 207)
+zoom = Vector2(0.5, 0.5)
 
 [connection signal="piece_detected" from="PlayerDropper" to="." method="_on_player_dropper_piece_detected"]
