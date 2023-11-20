@@ -16,33 +16,58 @@ var isGoingLeftBack : bool = false
 var updatesButtonY : float = 0
 var updatesButtonX : float = 0
 
+func _on_ready():
+	pass
+
+
 func _process(delta):
 	if isGoingDown:
 		position.y += 600 * delta
 		updatesButtonY += 600 * delta
+		allButtonsDisabled()
 		if updatesButtonY > 560:
 			isGoingDown = false
+			allButtonsEnabled()
 	
 	if isGoingUp:
 		position.y -= 600 * delta
 		updatesButtonY-= 600 * delta
+		allButtonsDisabled()
 		if updatesButtonY < 0:
 			isGoingUp = false
+			allButtonsEnabled()
 	
 	if isGoingLeftBack:
 		position.x -= 600 * delta
 		updatesButtonX -= 600 * delta
+		allButtonsDisabled()
 		if updatesButtonX < 0: 
 			isGoingLeftBack = false
+			allButtonsEnabled()
+	
+	if isGoingLeft:
+		position.x -= 600 * delta
+		updatesButtonX -= 600 * delta
+		allButtonsDisabled()
+		if updatesButtonX < -1080:
+			isGoingLeft = false
+			allButtonsEnabled()
 	
 	if isGoingRight:
 		position.x += 600 * delta
 		updatesButtonX += 600 * delta
+		allButtonsDisabled()
 		if updatesButtonX > 1080:
 			isGoingRight = false
+			allButtonsEnabled()
 	
 	if isGoingRightBack:
-		position.x
+		position.x += 600 * delta
+		updatesButtonX += 600 * delta
+		allButtonsDisabled()
+		if updatesButtonX > 0 :
+			isGoingRightBack = false
+			allButtonsEnabled()
 
 func _on_pressed():
 	isGoingDown = true
@@ -58,3 +83,37 @@ func _on_button_back_1p_pressed():
 
 func _on_button_classic_pressed():
 	get_tree().change_scene_to_packed(test_level_scene)
+
+func _on_button_back_mp_pressed():
+	isGoingRightBack = true
+
+func _on_button_multiplayer_pressed():
+	isGoingLeft = true
+
+func allButtonsDisabled():
+	$".".disabled = true
+	$ButtonHelp.disabled = true
+	$ButtonQuit.disabled = true
+	$ButtonBack.disabled = true
+	$ButtonBack/Button1P.disabled = true
+	$ButtonBack/Button1P/ButtonBack1P.disabled = true
+	$ButtonBack/Button1P/ButtonBack1P/ButtonClassic.disabled = true
+	$ButtonBack/Button1P/ButtonBack1P/ButtonVariants.disabled = true
+	$ButtonBack/ButtonMultiplayer.disabled = true
+	$ButtonBack/ButtonMultiplayer/ButtonBackMP.disabled = true
+	$ButtonBack/ButtonMultiplayer/ButtonBackMP/ButtonJoinLobby.disabled = true
+	$ButtonBack/ButtonMultiplayer/ButtonBackMP/ButtonCreateLobby.disabled = true
+
+func allButtonsEnabled():
+	$".".disabled = false
+	$ButtonHelp.disabled = false
+	$ButtonQuit.disabled = false
+	$ButtonBack.disabled = false
+	$ButtonBack/Button1P.disabled = false
+	$ButtonBack/Button1P/ButtonBack1P.disabled = false
+	$ButtonBack/Button1P/ButtonBack1P/ButtonClassic.disabled = false
+	$ButtonBack/Button1P/ButtonBack1P/ButtonVariants.disabled = false
+	$ButtonBack/ButtonMultiplayer.disabled = false
+	$ButtonBack/ButtonMultiplayer/ButtonBackMP.disabled = false
+	$ButtonBack/ButtonMultiplayer/ButtonBackMP/ButtonJoinLobby.disabled = false
+	$ButtonBack/ButtonMultiplayer/ButtonBackMP/ButtonCreateLobby.disabled = false
