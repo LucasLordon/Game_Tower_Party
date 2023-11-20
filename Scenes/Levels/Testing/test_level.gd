@@ -12,12 +12,6 @@ var pieces_paths = [
 
 func _on_player_dropper_piece_detected(pieceNumber):
 	var piece_scene = pieces_paths[pieceNumber]
-	if piece_scene:
-		var piece_instance = piece_scene.instantiate()
-		if piece_instance is RigidBody2D:
-			piece_instance.position = $PlayerDropper.global_position
-			$Pieces.add_child(piece_instance)
-		else:
-			print("La scène ne crée pas une instance de RigidBody2D.")
-	else:
-		print("Erreur : Scène introuvable pour le numéro de pièce ", pieceNumber)
+	var piece_instance = piece_scene.instantiate()
+	piece_instance.position = $PlayerDropper.global_position
+	$Pieces.add_child(piece_instance)
