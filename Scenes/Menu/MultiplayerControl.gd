@@ -31,7 +31,6 @@ func connection_failed():
 func _process(delta):
 	pass
 
-
 func _on_button_join_lobby_pressed():
 	peer = ENetMultiplayerPeer.new()
 	peer.create_client(Address, int(ServerPort))
