@@ -32,10 +32,10 @@ func _process(delta):
 	self.translate(vel * delta)
 	if CanSpawnRandomPieces:
 		spawn_random_piece()
-		$SpawnPiecesTimer.start()
+#		$SpawnPiecesTimer.start()
 		CanSpawnRandomPieces = false
-func _on_timer_timeout():
-	CanSpawnRandomPieces = true
+#func _on_timer_timeout():
+#	CanSpawnRandomPieces = true
 func spawn_random_piece():
 	_pieceNumber = _nextPieceNumber
 	_nextPieceNumber = randi() % pieces_paths.size()
@@ -43,3 +43,10 @@ func spawn_random_piece():
 
 func _on_can_move_timeout():
 	CanMoveDropper = true
+
+
+func _on_droping_piece_colision(colision):
+	print("isColision")
+	if colision:
+		print("colision")
+		CanSpawnRandomPieces = true

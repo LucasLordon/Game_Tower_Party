@@ -23,12 +23,12 @@ func _on_player_dropper_piece_detected(pieceNumber,nextPieceNumber):
 		var piece_scene = pieces_paths[pieceNumber]
 		var piece_instance = piece_scene.instantiate()
 		piece_instance.position = $PlayerDropper.global_position
-		$Pieces.add_child(piece_instance)
+		$DropingPiece.add_child(piece_instance)
 		$NextPieces.set_texture(pieces_assets[nextPieceNumber])
 	else:
 		var piece_scene = pieces_paths[pieceNumber]
 		var piece_instance = piece_scene.instantiate()
 		piece_instance.position = $PlayerDropper.global_position
-		$Pieces.add_child(piece_instance)
+		$DropingPiece.add_child(piece_instance)
 		firstTime=false
 		$NextPieces.set_texture(pieces_assets[nextPieceNumber])
