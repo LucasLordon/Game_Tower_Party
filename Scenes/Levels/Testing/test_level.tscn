@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://rtn72uaw6mal"]
+[gd_scene load_steps=6 format=3 uid="uid://rtn72uaw6mal"]
 
 [ext_resource type="PackedScene" uid="uid://cj3yq3msbg0wi" path="res://Scenes/Object/Game/Structurs/Bases/base.tscn" id="1_aga75"]
 [ext_resource type="Script" path="res://Scenes/Levels/Testing/test_level.gd" id="1_scabg"]
+[ext_resource type="Script" path="res://Scenes/Levels/Testing/DropingPiece.gd" id="3_u045b"]
 [ext_resource type="Texture2D" uid="uid://b7xeqwptuy4k" path="res://Assets/Pieces/Classics/Medium/PiecesClassicsMediumBlue.png" id="4_shuit"]
 [ext_resource type="PackedScene" uid="uid://b6cuk4wgksgjx" path="res://Scenes/Object/Game/Dropper/player_dropper.tscn" id="9_71j7f"]
 
@@ -12,6 +13,7 @@ script = ExtResource("1_scabg")
 position = Vector2(627, 723)
 
 [node name="DropingPiece" type="Node2D" parent="."]
+script = ExtResource("3_u045b")
 
 [node name="Pieces" type="Node2D" parent="."]
 
@@ -27,4 +29,5 @@ texture = ExtResource("4_shuit")
 position = Vector2(610, 207)
 zoom = Vector2(0.5, 0.5)
 
+[connection signal="colision" from="DropingPiece" to="PlayerDropper" method="_on_droping_piece_colision"]
 [connection signal="piece_detected" from="PlayerDropper" to="." method="_on_player_dropper_piece_detected"]
