@@ -101,8 +101,8 @@ func allButtonsDisabled():
 	$ButtonBack/Button1P/ButtonBack1P/ButtonVariants.disabled = true
 	$ButtonBack/ButtonMultiplayer.disabled = true
 	$ButtonBack/ButtonMultiplayer/ButtonBackMP.disabled = true
-	$ButtonBack/ButtonMultiplayer/ButtonBackMP/ButtonJoinLobby.disabled = true
-	$ButtonBack/ButtonMultiplayer/ButtonBackMP/ButtonCreateLobby.disabled = true
+	$ButtonBack/ButtonMultiplayer/ButtonBackMP/Control/ButtonJoinLobby.disabled = true
+	$ButtonBack/ButtonMultiplayer/ButtonBackMP/Control/ButtonCreateLobby.disabled = true
 
 func allButtonsEnabled():
 	$".".disabled = false
@@ -115,5 +115,5 @@ func allButtonsEnabled():
 	$ButtonBack/Button1P/ButtonBack1P/ButtonVariants.disabled = false
 	$ButtonBack/ButtonMultiplayer.disabled = false
 	$ButtonBack/ButtonMultiplayer/ButtonBackMP.disabled = false
-	$ButtonBack/ButtonMultiplayer/ButtonBackMP/ButtonJoinLobby.disabled = false
-	$ButtonBack/ButtonMultiplayer/ButtonBackMP/ButtonCreateLobby.disabled = false
+	$ButtonBack/ButtonMultiplayer/ButtonBackMP/Control/ButtonJoinLobby.disabled = false
+	$ButtonBack/ButtonMultiplayer/ButtonBackMP/Control/ButtonCreateLobby.disabled = false
