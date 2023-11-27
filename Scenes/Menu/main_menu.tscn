@@ -154,6 +154,33 @@ offset_right = 410.0
 offset_bottom = -80.0
 text = "MultiPlayer"
 
+<<<<<<< Updated upstream
+=======
+[node name="ButtonBackMP" type="Button" parent="ButtonPlay/ButtonBack/ButtonMultiplayer"]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 160.0
+offset_right = 950.0
+offset_bottom = 240.0
+text = "Back"
+
+[node name="ButtonJoinLobby" type="Button" parent="ButtonPlay/ButtonBack/ButtonMultiplayer/ButtonBackMP"]
+layout_mode = 0
+offset_left = -270.0
+offset_top = -160.0
+offset_right = -120.0
+offset_bottom = -80.0
+text = "Join Lobby"
+
+[node name="ButtonCreateLobby" type="Button" parent="ButtonPlay/ButtonBack/ButtonMultiplayer/ButtonBackMP"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -160.0
+offset_right = 410.0
+offset_bottom = -80.0
+text = "Create Lobby"
+
+>>>>>>> Stashed changes
 [node name="Label" type="Label" parent="."]
 offset_left = 350.0
 offset_top = 100.0
