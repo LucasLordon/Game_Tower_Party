@@ -2,7 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://cj3yq3msbg0wi" path="res://Scenes/Object/Game/Structurs/Bases/base.tscn" id="1_aga75"]
 [ext_resource type="Script" path="res://Scenes/Levels/Testing/test_level.gd" id="1_scabg"]
+<<<<<<< Updated upstream
 [ext_resource type="Script" path="res://Scenes/Levels/Testing/DropingPiece.gd" id="3_u045b"]
+=======
+[ext_resource type="Script" path="res://Scenes/Levels/Testing/DropingPiece.gd" id="3_7ta5v"]
+>>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://b7xeqwptuy4k" path="res://Assets/Pieces/Classics/Medium/PiecesClassicsMediumBlue.png" id="4_shuit"]
 [ext_resource type="PackedScene" uid="uid://b6cuk4wgksgjx" path="res://Scenes/Object/Game/Dropper/player_dropper.tscn" id="9_71j7f"]
 
@@ -13,7 +17,11 @@ script = ExtResource("1_scabg")
 position = Vector2(627, 723)
 
 [node name="DropingPiece" type="Node2D" parent="."]
+<<<<<<< Updated upstream
 script = ExtResource("3_u045b")
+=======
+script = ExtResource("3_7ta5v")
+>>>>>>> Stashed changes
 
 [node name="Pieces" type="Node2D" parent="."]
 
